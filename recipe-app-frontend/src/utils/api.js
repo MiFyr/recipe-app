@@ -1,0 +1,16 @@
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+export async function login(email, password){
+
+    const response = await fetch(API_URL + "login", {
+        method: "POST", 
+        headers: {...jsonHeaders}, 
+        body: JSON.stringify({email, password})
+    });
+
+    if (!response.ok) {
+        throw new Error("Login failed");
+    }
+
+    return response.json();
+}
