@@ -3,43 +3,48 @@ form {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem auto;
-  width: 100%;
+  width: 60%;
+  max-width: var(--max-width);
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
   background-color: #f4f4f4;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
 }
 
 form input,
 form textarea {
   width: 100%;
-  padding: var(--input-spacing);
-  margin: var(--input-spacing) 0;
-  border: var(--input-border);
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.459);
   border-radius: var(--border-radius);
 }
 
 form button {
   width: 100%;
-  padding: var(--input-spacing);
-  margin: var(--input-spacing) 0;
-  border: none;
   border-radius: var(--border-radius);
-  background-color: var(--secondary-bg);
-  color: var(--secondary-color);
-  cursor: pointer;
-  transition: var(--transition-all);
+  border: none;
+  font-weight: bold;
+  background-color: rgb(178, 223, 178);
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 form button:hover {
   opacity: 0.8;
+  cursor: pointer;
 }
 
 form p.error {
   color: red;
   font-size: 0.8rem;
   margin: 0;
-  padding: 0;
+  padding: 0.2rem;
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  form {
+    width: 100%;
+  }
 }

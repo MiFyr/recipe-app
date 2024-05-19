@@ -4,6 +4,7 @@ import styles from "./page.module.css";
 export default function HomePage() {
   return (
     <>
+      <h2>Välkommen!</h2>
       <div className={styles.description}>
         <div>
           <p>

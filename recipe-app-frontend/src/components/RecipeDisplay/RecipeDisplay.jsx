@@ -1,5 +1,6 @@
 "use client";
 
+import styles from "./RecipeDisplay.module.css";
 import { useEffect, useState } from "react";
 import { deleteRecipe, getRecipeById } from "@/utils/api";
 import { checkIfLoggedIn } from "@/utils/auth";
@@ -47,12 +48,13 @@ function LoggedInButtons({ recipeParams }) {
 
   return (
     <>
-      <div>
-        <button type="button" onClick={deleteThis}>
+      <div className={styles.buttonDiv}>
+        <button type="button" className={styles.deleteBtn} onClick={deleteThis}>
           Ta bort receptet
         </button>
         <button
           type="button"
+          className={styles.editBtn}
           onClick={() => router.push(`/recipes/${recipeParams.id}/update`)}
         >
           Ändra receptet

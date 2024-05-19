@@ -24,14 +24,16 @@ export default function RecipesList() {
         {recipes.map((recipe) => (
           <li key={recipe.id}>
             <Link href={`/recipes/${recipe.id}`}>
-              <h2>{recipe.title}</h2>
+              <h3>{recipe.title}</h3>
             </Link>
           </li>
         ))}
       </ul>
 
       {isLoggedIn ? (
-        <Link href={"/recipes/create"}>Skapa nytt recept</Link>
+        <Link href={"/recipes/create"} className="newRecipeLink">
+          Skapa nytt recept
+        </Link>
       ) : null}
     </>
   );
