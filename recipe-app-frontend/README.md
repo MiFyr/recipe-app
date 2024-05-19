@@ -2,7 +2,13 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+Firstly, you might need to install some packages:
+
+```bash
+npm install
+```
+
+After that, run the development server:
 
 ```bash
 npm run dev
@@ -14,11 +20,13 @@ pnpm dev
 bun dev
 ```
 
+Then configure the API setup to connect with the API on the right URL. Throughout development, this has been setup on a local .env.local file. Make sure the API is running or the endpoints will not work.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Note
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This application is a demo, and is not yet finished. This means that some functions might not be implemented or working properly at this current stage.
 
 ## Learn More
 
