@@ -1,5 +1,6 @@
 "use client";
 
+import "@/styles/lists.css";
 import { getAllRecipes } from "@/utils/api";
 import { useEffect, useState } from "react";
 import Link from "next/link";

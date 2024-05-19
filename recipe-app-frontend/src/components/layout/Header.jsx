@@ -2,11 +2,11 @@ import Navigation from "./Navigation";
 import styles from "./Header.module.css";
 
 export default function Header() {
-    return (
+  return (
     <header className={styles.header}>
-        <h1>Todos App</h1>
+      <h1>Middagstipset</h1>
 
-        <Navigation />
+      <Navigation />
     </header>
-    );
+  );
 }

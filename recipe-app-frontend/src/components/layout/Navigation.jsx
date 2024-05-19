@@ -15,8 +15,12 @@ export default function Navigation() {
 
   return (
     <nav className={styles.nav}>
-      <Link href={"/"}>Start</Link>
-      <Link href={"/recipes"}>Recept</Link>
+      <Link href={"/"} className={styles.card}>
+        Start
+      </Link>
+      <Link href={"/recipes"} className={styles.card}>
+        Recept
+      </Link>
 
       {isLoggedIn ? <LoggedInLinks /> : <LoggedOutLinks />}
     </nav>
@@ -26,9 +30,13 @@ export default function Navigation() {
 function LoggedInLinks() {
   return (
     <>
-      <Link href={"/recipes/myrecipes"}>Mina recept</Link>
+      <Link href={"/recipes/myrecipes"} className={styles.card}>
+        Mina recept
+      </Link>
 
-      <Link href={"/auth/logout"}>Logout</Link>
+      <Link href={"/auth/logout"} className={styles.card}>
+        Logout
+      </Link>
     </>
   );
 }
@@ -36,7 +44,9 @@ function LoggedInLinks() {
 function LoggedOutLinks() {
   return (
     <>
-      <Link href={"/auth/login"}>Login</Link>
+      <Link href={"/auth/login"} className={styles.card}>
+        Login
+      </Link>
     </>
   );
 }

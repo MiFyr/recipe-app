@@ -1,15 +1,35 @@
 .nav {
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0rem 2rem;
+}
+
+.card {
+  padding: 1rem 1.2rem;
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    color: rgb(184, 240, 110);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .nav {
     display: flex;
-    justify-content: space-around;
-    width: 100%;
-    max-width: var(--max-width);
-}
+    justify-content: center;
+    max-width: 100%;
+    margin: 0rem 2rem;
+  }
 
-.nav a {
-    color: var(--secondary-color);
-    padding: 0.5rem;
-}
-
-.nav a:hover {
-    text-decoration: underline;
+  .card {
+    padding: 0.5rem 0.5rem;
+    font-weight: 400;
+    font-size: 0.9rem;
+  }
 }
