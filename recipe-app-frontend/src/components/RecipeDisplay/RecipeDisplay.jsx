@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { deleteRecipe, getRecipeById } from "@/utils/api";
 import { checkIfLoggedIn } from "@/utils/auth";
+import { useRouter } from "next/navigation";
 
 export default function RecipeDisplay({ recipeData }) {
   const isLoggedIn = checkIfLoggedIn();
@@ -38,6 +39,7 @@ export default function RecipeDisplay({ recipeData }) {
 }
 
 function LoggedInButtons({ recipeParams }) {
+  const router = useRouter();
   const deleteThis = async () => {
     await deleteRecipe(recipeParams.id);
     router.push("/recipes");

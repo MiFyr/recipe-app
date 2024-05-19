@@ -20,16 +20,6 @@ export async function login(email, password) {
   return response.json();
 }
 
-export async function getUserInfo() {
-  const response = await fetch(API_URL + "/manage/info", {
-    headers: {
-      Authorization: "Bearer " + getAccessToken(),
-    },
-  });
-
-  return response.json();
-}
-
 export async function getAllRecipes() {
   const response = await fetch(API_URL + "api/recipes");
 
@@ -39,7 +29,16 @@ export async function getAllRecipes() {
 export async function getRecipeById(id) {
   const response = await fetch(API_URL + "api/recipes/" + id);
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error(`Status: ${response.status}`);
+  }
+
+  const text = await response.text();
+  if (!text) {
+    throw new Error(`Empty response body`);
+  }
+
+  return JSON.parse(text);
 }
 
 export async function getUserRecipes() {
@@ -49,7 +48,16 @@ export async function getUserRecipes() {
     },
   });
 
-  return response.json();
+  if (!response.ok) {
+    throw new Error(`Status: ${response.status}`);
+  }
+
+  const text = await response.text();
+  if (!text) {
+    throw new Error(`Empty response body`);
+  }
+
+  return JSON.parse(text);
 }
 
 export async function createRecipe(title, ingredients, instruction) {
@@ -85,5 +93,5 @@ export async function deleteRecipe(id) {
     },
   });
 
-  return response.json();
+  return response.ok;
 }

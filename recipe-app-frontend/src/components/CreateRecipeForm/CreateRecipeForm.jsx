@@ -32,6 +32,13 @@ export default function CreateRecipeForm() {
     console.log(formData);
   };
 
+  const addIngredient = () => {
+    setFormData({
+      ...formData,
+      ingredients: [...formData.ingredients, ""],
+    });
+  };
+
   return (
     <>
       <form
@@ -63,6 +70,9 @@ export default function CreateRecipeForm() {
             defaultValue={ingredient}
           />
         ))}
+        <button type="button" onClick={addIngredient}>
+          Ny ingrediens
+        </button>
 
         <label htmlFor="instruction">Instruktioner</label>
         <textarea
