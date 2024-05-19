@@ -1,8 +1,8 @@
-export function handleFormChange(setFormData, formData) {
-    return (event) => {
-        const fieldName = event.target.name;
-        const fieldValue = event.target.value;
+export function handleFormChange(formData, setFormData) {
+  return (event) => {
+    const fieldName = event.target.name;
+    const fieldValue = event.target.value;
 
-        setFormData({ ...formData, [fieldName]: fieldValue });
-    };
+    setFormData({ ...formData, [fieldName]: fieldValue });
+  };
 }
