@@ -1,15 +1,13 @@
 "use client";
 
-import { getAllRecipes } from "@/utils/api";
+import { getUserRecipes } from "@/utils/api";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { checkIfLoggedIn } from "@/utils/auth";
 
-export default function RecipesList() {
-  const isLoggedIn = checkIfLoggedIn();
+export default function MyRecipesList() {
   const [recipes, setRecipes] = useState([]);
   const fetchRecipes = async () => {
-    const recipes = await getAllRecipes();
+    const recipes = await getUserRecipes();
     setRecipes(recipes);
   };
 
@@ -29,9 +27,7 @@ export default function RecipesList() {
         ))}
       </ul>
 
-      {isLoggedIn ? (
-        <Link href={"/recipes/create"}>Skapa nytt recept</Link>
-      ) : null}
+      <Link href={"/recipes/create"}>Skapa nytt recept</Link>
     </>
   );
 }

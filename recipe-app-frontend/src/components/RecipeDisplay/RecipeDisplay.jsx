@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { deleteRecipe, getRecipeById, getUserInfo } from "@/utils/api";
-import { useRouter } from "next/navigation";
+import { deleteRecipe, getRecipeById } from "@/utils/api";
 import { checkIfLoggedIn } from "@/utils/auth";
 
 export default function RecipeDisplay({ recipeData }) {
-  const router = useRouter();
   const isLoggedIn = checkIfLoggedIn();
   const [displayedRecipe, setDisplayedRecipe] = useState({
     title: "",

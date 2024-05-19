@@ -26,6 +26,8 @@ export default function Navigation() {
 function LoggedInLinks() {
   return (
     <>
+      <Link href={"/recipes/my-recipes"}>Mina recept</Link>
+
       <Link href={"/auth/logout"}>Logout</Link>
     </>
   );

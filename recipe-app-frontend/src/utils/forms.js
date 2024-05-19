@@ -3,6 +3,13 @@ export function handleFormChange(formData, setFormData) {
     const fieldName = event.target.name;
     const fieldValue = event.target.value;
 
-    setFormData({ ...formData, [fieldName]: fieldValue });
+    if (fieldName.startsWith("ingredient_")) {
+      const index = parseInt(fieldName.split("_")[1], 10);
+      const newIngredients = [...formData.ingredients];
+      newIngredients[index] = fieldValue;
+      setFormData({ ...formData, ingredients: newIngredients });
+    } else {
+      setFormData({ ...formData, [fieldName]: fieldValue });
+    }
   };
 }

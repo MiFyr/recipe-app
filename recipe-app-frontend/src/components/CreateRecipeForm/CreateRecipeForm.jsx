@@ -18,7 +18,7 @@ export default function CreateRecipeForm() {
     event.preventDefault();
 
     try {
-      const response = await createRecipe(
+      await createRecipe(
         formData.title,
         formData.ingredients,
         formData.instruction
@@ -57,18 +57,17 @@ export default function CreateRecipeForm() {
           <input
             key={index}
             type="text"
-            id="ingredient"
-            name="ingredient"
+            name={`ingredient_${index}`}
             placeholder="Ingrediens..."
             required
             defaultValue={ingredient}
           />
         ))}
 
-        <label htmlFor="instructions">Instruktioner</label>
+        <label htmlFor="instruction">Instruktioner</label>
         <textarea
-          id="instructions"
-          name="instructions"
+          id="instruction"
+          name="instruction"
           placeholder="Gör så här..."
           required
           defaultValue={formData.instruction}

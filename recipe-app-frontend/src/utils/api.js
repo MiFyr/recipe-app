@@ -42,6 +42,16 @@ export async function getRecipeById(id) {
   return response.json();
 }
 
+export async function getUserRecipes() {
+  const response = await fetch(API_URL + "api/recipes/myrecipes", {
+    headers: {
+      Authorization: "Bearer " + getAccessToken(),
+    },
+  });
+
+  return response.json();
+}
+
 export async function createRecipe(title, ingredients, instruction) {
   const response = await fetch(API_URL + "api/recipes", {
     method: "POST",
