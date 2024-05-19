@@ -1,0 +1,33 @@
+.deleteBtn,
+.editBtn {
+  border: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 0.4rem;
+}
+
+.deleteBtn {
+  background-color: rgba(206, 8, 8, 0.623);
+}
+
+.editBtn {
+  background-color: rgba(0, 128, 0, 0.904);
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.buttonDiv {
+  display: flex;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+  .buttonDiv {
+    flex-direction: column;
+  }
+}

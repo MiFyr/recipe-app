@@ -1,0 +1,22 @@
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 0.8rem;
+}
+
+.newRecipeLink {
+  font-weight: 500;
+  padding: 0.5rem;
+  background-color: rgba(0, 128, 0, 0.596);
+  border: 1px solid green;
+  border-radius: var(--border-radius);
+}
+
+/* Mobile */
+@media screen and (max-width: 700px) {
+  li {
+    padding: 0.5rem;
+  }
+}
